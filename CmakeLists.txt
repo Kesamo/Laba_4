@@ -6,16 +6,24 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
-add_subdirectory(my_lab)
+add_subdirectory(Lab_2_2026)
 
 add_executable(lab4_app src/main.cpp)
 
 target_include_directories(lab4_app PRIVATE
-
+    src/LazySequence
+    src/Generator
+    src/Exceptions
 )
 
 target_link_libraries(lab4_app PRIVATE
-
+    ftxui::dom
+    ftxui::screen
+    ftxui::component
+    lab2_core
+    lab2_sequences
+    lab2_seqarray
+    lab2_seqlist
 )
 
 enable_testing()
